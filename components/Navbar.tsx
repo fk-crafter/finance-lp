@@ -1,53 +1,38 @@
 import Link from "next/link";
+import { NavLinkProps } from "@/types";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white shadow-md fixed top-0 z-50">
+    <nav className="w-full bg-gradient-to-r from-gray-900 to-gray-700 shadow-md fixed top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-gray-800">
+            <Link href="/" className="text-2xl font-bold text-white">
               logo
             </Link>
           </div>
 
           <div className="hidden md:flex space-x-8">
-            <Link href="#home" className="text-gray-600 hover:text-gray-700">
-              homepage
-            </Link>
-            <Link
-              href="#features"
-              className="text-gray-600 hover:text-gray-700"
-            >
-              features
-            </Link>
-            <Link href="#about" className="text-gray-600 hover:text-gray-700">
-              use cases
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-gray-700">
-              pricing
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-gray-700">
-              blog
-            </Link>
+            <NavLink href="#home">homepage</NavLink>
+            <NavLink href="#features">features</NavLink>
+            <NavLink href="#about">use cases</NavLink>
+            <NavLink href="#contact">pricing</NavLink>
+            <NavLink href="#blog">blog</NavLink>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="#login" className="text-gray-600 hover:text-gray-700">
-              sign up
-            </Link>
             <Link
-              href="#signup"
-              className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700"
+              href="#waitlist"
+              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-all duration-300"
             >
-              sign in
+              Join the waitlist
             </Link>
           </div>
 
           <div className="md:hidden">
             <button
               type="button"
-              className="text-gray-600 hover:text-gray-700 focus:outline-none focus:text-blue-600"
+              className="text-white hover:text-gray-200 focus:outline-none"
               aria-label="Open menu"
             >
               <svg
@@ -71,5 +56,15 @@ const Navbar = () => {
     </nav>
   );
 };
+
+const NavLink = ({ href, children }: NavLinkProps) => (
+  <Link
+    href={href}
+    className="relative text-white font-medium pb-1 transition-all duration-300 group"
+  >
+    <span>{children}</span>
+    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+);
 
 export default Navbar;
