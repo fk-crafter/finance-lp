@@ -3,26 +3,26 @@ import { NavLinkProps } from "@/types";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-gradient-to-r from-gray-900 to-gray-700 shadow-md fixed top-0 z-50">
+    <nav className="w-full bg-gradient-to-r from-gray-900 to-gray-800 top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-white">
-              logo
+              Logo
             </Link>
           </div>
 
           <div className="hidden md:flex space-x-8">
-            <NavLink href="#home">homepage</NavLink>
-            <NavLink href="#features">features</NavLink>
-            <NavLink href="#about">use cases</NavLink>
-            <NavLink href="#contact">pricing</NavLink>
-            <NavLink href="#blog">blog</NavLink>
+            <NavLink href="#home">Homepage</NavLink>
+            <NavLink href="#features">Features</NavLink>
+            <NavLink href="#about">Use cases</NavLink>
+            <NavLink href="#contact">Pricing</NavLink>
+            <NavLink href="#blog">Blog</NavLink>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="#waitlist"
+              href="#"
               className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-all duration-300"
             >
               Join the waitlist
@@ -60,10 +60,9 @@ const Navbar = () => {
 const NavLink = ({ href, children }: NavLinkProps) => (
   <Link
     href={href}
-    className="relative text-white font-medium pb-1 transition-all duration-300 group"
+    className="text-white font-medium transition-all duration-300"
   >
-    <span>{children}</span>
-    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+    {children}
   </Link>
 );
 
