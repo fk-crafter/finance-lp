@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Hero = () => {
   return (
     <section className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-36 pb-24">
@@ -29,11 +31,13 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="mt-16">
-          <img
-            src="/images/finance-dashboard.png"
+        <div className="mt-16 flex justify-center">
+          <Image
+            src="/img/dashboard.jpg"
             alt="Finance Dashboard"
-            className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+            width={400}
+            height={200}
+            className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
           />
         </div>
       </div>
