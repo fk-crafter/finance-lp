@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-36 pb-24">
+    <section className="w-full  text-white pt-36 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-16">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
           Unlock the Power of <br />
-          <span className="text-indigo-500">AI in Financial Analysis</span>{" "}
+          <span className="text-indigo-400">AI in Financial Analysis</span>{" "}
           <br />
           for Smarter Decisions 💰
         </h1>

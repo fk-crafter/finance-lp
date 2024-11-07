@@ -3,7 +3,7 @@ import { NavLinkProps } from "@/types";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-gradient-to-r from-gray-900 to-gray-800 top-0 z-50">
+    <nav className="w-full  top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="flex-shrink-0">
           <Link href="/" className="text-2xl font-bold text-white">
