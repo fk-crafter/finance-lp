@@ -9,11 +9,13 @@ import {
   FaBullseye,
   FaBalanceScale,
 } from "react-icons/fa";
+import { TbPlayerPlay } from "react-icons/tb";
 import { FeatureCardProps } from "@/types";
+import Image from "next/image";
 
 const FinanceSection = () => {
   return (
-    <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white">
+    <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-16 px-4 lg:px-8 text-white">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Why Our Finance Tool is Your Best Choice
@@ -26,13 +28,15 @@ const FinanceSection = () => {
         <div className="relative mx-auto mb-10 w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
           <div className="absolute inset-0 bg-gray-800 bg-opacity-30 flex items-center justify-center">
             <button className="w-20 h-20 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110">
-              <FaChartLine className="text-3xl" />
+              <TbPlayerPlay className="text-3xl" />
             </button>
           </div>
-          <img
-            src="/images/finance-video-placeholder.jpg"
+          <Image
+            src="/img/financedash.jpg"
             alt="Finance Video"
             className="object-cover w-full h-full"
+            width={800}
+            height={450}
           />
         </div>
 

@@ -12,11 +12,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex space-x-8 items-center ml-20">
-          <NavLink href="#home">Homepage</NavLink>
-          <NavLink href="#features">Features</NavLink>
-          <NavLink href="#about">Use cases</NavLink>
-          <NavLink href="#contact">Pricing</NavLink>
-          <NavLink href="#blog">Blog</NavLink>
+          <NavLink href="#">Homepage</NavLink>
+          <NavLink href="#">Features</NavLink>
+          <NavLink href="#">Use cases</NavLink>
+          <NavLink href="#">Pricing</NavLink>
+          <NavLink href="#">Blog</NavLink>
         </div>
 
         <div className="hidden md:flex items-center">

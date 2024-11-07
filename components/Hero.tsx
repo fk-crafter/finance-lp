@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -17,12 +18,12 @@ const Hero = () => {
         </p>
 
         <div className="flex justify-center space-x-6 mb-12">
-          <a
-            href="#waitlist"
+          <Link
+            href="#"
             className="bg-indigo-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-indigo-600 transition-all duration-300"
           >
             Join The Waitlist
-          </a>
+          </Link>
           <a
             href="#learn-more"
             className="border border-white text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
