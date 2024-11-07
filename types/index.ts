@@ -12,3 +12,9 @@ export interface AnalysisProps {
 export interface TiltCardProps {
   children: React.ReactNode;
 }
+
+export interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}

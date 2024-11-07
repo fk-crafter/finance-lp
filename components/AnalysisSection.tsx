@@ -13,13 +13,13 @@ const AnalysisSection = () => {
             Financial Activity
           </h3>
           <div className="space-y-4">
-            <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="flex items-center justify-center space-x-3 mb-4 mr-4">
               <div className="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center text-white text-md font-bold">
                 $7,000
               </div>
               <p className="text-gray-300">Savings</p>
             </div>
-            <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="flex items-center justify-center space-x-3 mb-4 ml-5">
               <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
                 $8,000
               </div>
