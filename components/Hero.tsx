@@ -28,7 +28,7 @@ const Hero = () => {
             href="#learn-more"
             className="border border-white text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
           >
-            Learn More
+            See More
           </a>
         </div>
 
