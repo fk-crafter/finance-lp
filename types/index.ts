@@ -18,3 +18,11 @@ export interface FeatureCardProps {
   title: string;
   description: string;
 }
+
+export interface TestimonialProps {
+  name: string;
+  role: string;
+  message: string;
+  rating: number;
+  avatar: string;
+}
