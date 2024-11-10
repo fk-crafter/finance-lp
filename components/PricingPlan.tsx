@@ -102,10 +102,7 @@ const PricingCard = ({
   popular,
   delay,
 }: PricingCardProps) => (
-  <motion.div
-    initial={{ y: 0 }}
-    animate={{ y: [0, -5, 0] }}
-    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay }}
+  <div
     className={`relative rounded-lg p-6 shadow-md ${
       popular ? "bg-indigo-600 text-white" : "bg-gray-800 bg-opacity-40"
     }`}
@@ -128,10 +125,10 @@ const PricingCard = ({
       ))}
     </ul>
 
-    <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-600 transition-all duration-300">
+    <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-400 transition-all duration-300">
       Choose Plan
     </button>
-  </motion.div>
+  </div>
 );
 
 export default PricingPlans;
