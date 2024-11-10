@@ -33,23 +33,28 @@ const PricingPlans = () => {
           14-day trial of our Premium features.
         </p>
 
-        <div className="flex justify-center mb-8">
-          <button
-            onClick={() => setBillingCycle("monthly")}
-            className={`text-white font-medium px-4 py-2 rounded-l-lg ${
-              billingCycle === "monthly" ? "bg-indigo-500" : "bg-gray-700"
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => setBillingCycle("yearly")}
-            className={`text-white font-medium px-4 py-2 rounded-r-lg ${
-              billingCycle === "yearly" ? "bg-indigo-500" : "bg-gray-700"
-            }`}
-          >
-            Yearly
-          </button>
+        <div className="relative flex justify-center mb-8">
+          <div className="flex w-52 space-x-1 bg-gray-700 rounded-lg p-1 relative">
+            <motion.div
+              layout
+              initial={false}
+              animate={{ x: billingCycle === "monthly" ? 0 : "100%" }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+              className="absolute top-0 left-0 w-1/2 h-full bg-indigo-500 rounded-lg"
+            />
+            <button
+              onClick={() => setBillingCycle("monthly")}
+              className="relative z-10 w-1/2 py-2 font-medium text-white focus:outline-none"
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setBillingCycle("yearly")}
+              className="relative z-10 w-1/2 py-2 font-medium text-white focus:outline-none"
+            >
+              Yearly
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -100,12 +105,7 @@ const PricingCard = ({
   <motion.div
     initial={{ y: 0 }}
     animate={{ y: [0, -5, 0] }}
-    transition={{
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: delay,
-    }}
+    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay }}
     className={`relative rounded-lg p-6 shadow-md ${
       popular ? "bg-indigo-600 text-white" : "bg-gray-800 bg-opacity-40"
     }`}
