@@ -1,11 +1,29 @@
 "use client";
 
+import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { pricingFeatures } from "@/constants";
 import { PricingCardProps } from "@/types";
 
 const PricingPlans = () => {
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
+    "monthly"
+  );
+
+  const pricing = {
+    monthly: {
+      silver: "$50/month",
+      gold: "$100/month",
+      premium: "$150/month",
+    },
+    yearly: {
+      silver: "$500/year",
+      gold: "$1000/year",
+      premium: "$1500/year",
+    },
+  };
+
   return (
     <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white">
       <div className="max-w-5xl mx-auto text-center">
@@ -16,10 +34,20 @@ const PricingPlans = () => {
         </p>
 
         <div className="flex justify-center mb-8">
-          <button className="text-white font-medium bg-indigo-500 px-4 py-2 rounded-l-lg">
+          <button
+            onClick={() => setBillingCycle("monthly")}
+            className={`text-white font-medium px-4 py-2 rounded-l-lg ${
+              billingCycle === "monthly" ? "bg-indigo-500" : "bg-gray-700"
+            }`}
+          >
             Monthly
           </button>
-          <button className="text-gray-300 font-medium bg-gray-700 px-4 py-2 rounded-r-lg">
+          <button
+            onClick={() => setBillingCycle("yearly")}
+            className={`text-white font-medium px-4 py-2 rounded-r-lg ${
+              billingCycle === "yearly" ? "bg-indigo-500" : "bg-gray-700"
+            }`}
+          >
             Yearly
           </button>
         </div>
@@ -27,20 +55,32 @@ const PricingPlans = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <PricingCard
             title="Silver"
-            price="$50/month"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.silver
+                : pricing.yearly.silver
+            }
             features={pricingFeatures.silver}
             delay={0}
           />
           <PricingCard
             title="Gold"
-            price="$100/month"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.gold
+                : pricing.yearly.gold
+            }
             features={pricingFeatures.gold}
             popular
             delay={0.2}
           />
           <PricingCard
             title="Premium"
-            price="$150/month"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.premium
+                : pricing.yearly.premium
+            }
             features={pricingFeatures.premium}
             delay={0.4}
           />
@@ -88,7 +128,7 @@ const PricingCard = ({
       ))}
     </ul>
 
-    <button className="bg-indigo-200 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-400 transition-all duration-300">
+    <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-600 transition-all duration-300">
       Choose Plan
     </button>
   </motion.div>
