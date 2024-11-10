@@ -50,3 +50,42 @@ export const testimonials: TestimonialProps[] = [
     avatar: "/img/6.jpg",
   },
 ];
+
+export const pricingFeatures = {
+  silver: [
+    "No discount",
+    "Basic support",
+    "Ads banner free",
+    "Design style",
+    "Component library",
+    "Limited links",
+    "Dedicated analytics platform",
+    "Chat support",
+    "Optimize hashtags",
+    "Unlimited users",
+  ],
+  gold: [
+    "No discount",
+    "Basic support",
+    "Ads banner free",
+    "Design style",
+    "Component library",
+    "Limited links",
+    "Dedicated analytics platform",
+    "Chat support",
+    "Optimize hashtags",
+    "Unlimited users",
+  ],
+  premium: [
+    "No discount",
+    "Basic support",
+    "Ads banner free",
+    "Design style",
+    "Component library",
+    "Limited links",
+    "Dedicated analytics platform",
+    "Chat support",
+    "Optimize hashtags",
+    "Unlimited users",
+  ],
+};

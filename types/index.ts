@@ -26,3 +26,11 @@ export interface TestimonialProps {
   rating: number;
   avatar: string;
 }
+
+export interface PricingCardProps {
+  title: string;
+  price: string;
+  features: string[];
+  popular?: boolean;
+  delay: number;
+}
