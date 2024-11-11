@@ -7,8 +7,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-16">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
           Unlock the Power of <br />
-          <span className="text-indigo-400">AI in Financial Analysis</span>{" "}
-          <br />
+          <span className="text-teal-400">AI in Financial Analysis</span> <br />
           for Smarter Decisions 💰
         </h1>
 
@@ -20,7 +19,7 @@ const Hero = () => {
         <div className="flex justify-center space-x-6 mb-12">
           <Link
             href="#"
-            className="bg-indigo-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-indigo-600 transition-all duration-300"
+            className="bg-teal-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-teal-600 transition-all duration-300"
           >
             Join The Waitlist
           </Link>

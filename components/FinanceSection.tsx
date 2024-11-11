@@ -27,7 +27,7 @@ const FinanceSection = () => {
 
         <div className="relative mx-auto mb-10 w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
           <div className="absolute inset-0 bg-gray-800 bg-opacity-30 flex items-center justify-center">
-            <button className="w-20 h-20 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110">
+            <button className="w-20 h-20 rounded-full bg-teal-500 text-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110">
               <TbPlayerPlay className="text-3xl" />
             </button>
           </div>
@@ -42,32 +42,32 @@ const FinanceSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
           <FeatureCard
-            icon={<FaWallet className="text-indigo-500 text-3xl" />}
+            icon={<FaWallet className="text-teal-500 text-3xl" />}
             title="Budget Management"
             description="Track and manage your budget effortlessly."
           />
           <FeatureCard
-            icon={<FaShieldAlt className="text-indigo-500 text-3xl" />}
+            icon={<FaShieldAlt className="text-teal-500 text-3xl" />}
             title="Data Security"
             description="We prioritize your data security with top-notch protection."
           />
           <FeatureCard
-            icon={<FaBullseye className="text-indigo-500 text-3xl" />}
+            icon={<FaBullseye className="text-teal-500 text-3xl" />}
             title="Investment Goals"
             description="Set and reach your financial goals with ease."
           />
           <FeatureCard
-            icon={<FaGlobe className="text-indigo-500 text-3xl" />}
+            icon={<FaGlobe className="text-teal-500 text-3xl" />}
             title="Global Access"
             description="Access your data and insights anytime, anywhere."
           />
           <FeatureCard
-            icon={<FaBalanceScale className="text-indigo-500 text-3xl" />}
+            icon={<FaBalanceScale className="text-teal-500 text-3xl" />}
             title="Financial Planning"
             description="Get insights for long-term financial planning."
           />
           <FeatureCard
-            icon={<FaChartLine className="text-indigo-500 text-3xl" />}
+            icon={<FaChartLine className="text-teal-500 text-3xl" />}
             title="Analytics & Insights"
             description="Detailed analytics to help you make informed decisions."
           />

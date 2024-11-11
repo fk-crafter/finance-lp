@@ -14,7 +14,7 @@ const AnalysisSection = () => {
           </h3>
           <div className="space-y-4">
             <div className="flex items-center justify-center space-x-3 mb-4 mr-4">
-              <div className="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center text-white text-md font-bold">
+              <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
                 $7,000
               </div>
               <p className="text-gray-300">Savings</p>
@@ -39,11 +39,11 @@ const AnalysisSection = () => {
             </h4>
             <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center mb-1">
               <p className="text-gray-300 text-xs">This Month</p>
-              <div className="w-1/2 bg-indigo-800 h-1 rounded"></div>
+              <div className="w-1/2 bg-teal-800 h-1 rounded"></div>
             </div>
             <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center">
               <p className="text-gray-300 text-xs">Last Month</p>
-              <div className="w-1/4 bg-indigo-500 h-1 rounded"></div>
+              <div className="w-1/4 bg-teal-500 h-1 rounded"></div>
             </div>
           </div>
         </TiltCard>
@@ -54,17 +54,17 @@ const AnalysisSection = () => {
           </h3>
           <div className="space-y-4">
             <InfoCard
-              icon={<FaChartPie className="text-indigo-500 text-lg" />}
+              icon={<FaChartPie className="text-teal-500 text-lg" />}
               title="Smart Financial Planning"
               description="Easily track your savings, expenses, and investments to optimize your budget."
             />
             <InfoCard
-              icon={<FaBriefcase className="text-indigo-500 text-lg" />}
+              icon={<FaBriefcase className="text-teal-500 text-lg" />}
               title="Professional Investment Insights"
               description="Receive reliable insights to make better financial decisions and grow your wealth."
             />
             <InfoCard
-              icon={<FaPiggyBank className="text-indigo-500 text-lg" />}
+              icon={<FaPiggyBank className="text-teal-500 text-lg" />}
               title="Savings Optimization"
               description="Identify areas to save and accumulate more efficiently for future goals."
             />
@@ -104,7 +104,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-indigo-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-teal-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"></div>
       {children}
     </div>
   );

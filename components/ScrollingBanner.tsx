@@ -5,7 +5,7 @@ import React from "react";
 
 const ScrollingBanner = () => {
   return (
-    <div className="w-full bg-indigo-500 py-8 overflow-hidden ">
+    <div className="w-full bg-teal-500 py-8 overflow-hidden ">
       <div className="flex">
         <motion.div
           className="flex space-x-8"

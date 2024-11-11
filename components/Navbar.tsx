@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center">
           <Link
             href="#"
-            className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-all duration-300"
+            className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition-all duration-300"
           >
             Join the waitlist
           </Link>
