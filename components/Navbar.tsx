@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { NavLinkProps } from "@/types";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
     <nav className="w-full  top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="flex-shrink-0">
-          <Link href="/" className="text-2xl font-bold text-white">
-            Logo
-          </Link>
+          <Image src="/img/logo.png" alt="Logo" width={150} height={150} />
         </div>
 
         <div className="hidden md:flex space-x-8 items-center ml-20">

@@ -7,7 +7,11 @@
 
 body {
   font-family: "ABeeZee", sans-serif;
-  background-color: #132e65;
+  background-image: url("/img/blurry-gradient-haikei.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .font-montserrat {
