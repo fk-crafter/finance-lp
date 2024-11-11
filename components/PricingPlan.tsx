@@ -40,7 +40,7 @@ const PricingPlans = () => {
               initial={false}
               animate={{ x: billingCycle === "monthly" ? 0 : "100%" }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              className="absolute top-0 left-0 w-1/2 h-full bg-indigo-500 rounded-lg"
+              className="absolute top-0 left-0 w-1/2 h-full bg-teal-500 rounded-lg"
             />
             <button
               onClick={() => setBillingCycle("monthly")}
@@ -96,7 +96,7 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
   <div
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
-        ? "bg-indigo-600 text-white scale-105 transform translate-y-2 shadow-2xl z-10"
+        ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-2xl z-10"
         : "bg-gray-800 bg-opacity-40"
     }`}
     style={{ marginTop: popular ? "-20px" : "0" }}
@@ -114,12 +114,12 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
     <ul className="text-gray-300 mb-6 space-y-2">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center">
-          <FaCheck className="text-indigo-500 mr-2" /> {feature}
+          <FaCheck className="text-teal-500 mr-2" /> {feature}
         </li>
       ))}
     </ul>
 
-    <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-400 transition-all duration-300">
+    <button className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300">
       Choose Plan
     </button>
   </div>
