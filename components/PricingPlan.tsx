@@ -33,7 +33,7 @@ const PricingPlans = () => {
           14-day trial of our Premium features.
         </p>
 
-        <div className="relative flex justify-center mb-8">
+        <div className="relative flex justify-center mb-12">
           <div className="flex w-52 space-x-1 bg-gray-700 rounded-lg p-1 relative">
             <motion.div
               layout
@@ -66,7 +66,6 @@ const PricingPlans = () => {
                 : pricing.yearly.silver
             }
             features={pricingFeatures.silver}
-            delay={0}
           />
           <PricingCard
             title="Gold"
@@ -77,7 +76,6 @@ const PricingPlans = () => {
             }
             features={pricingFeatures.gold}
             popular
-            delay={0.2}
           />
           <PricingCard
             title="Premium"
@@ -87,7 +85,6 @@ const PricingPlans = () => {
                 : pricing.yearly.premium
             }
             features={pricingFeatures.premium}
-            delay={0.4}
           />
         </div>
       </div>
@@ -95,20 +92,17 @@ const PricingPlans = () => {
   );
 };
 
-const PricingCard = ({
-  title,
-  price,
-  features,
-  popular,
-  delay,
-}: PricingCardProps) => (
+const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
   <div
-    className={`relative rounded-lg p-6 shadow-md ${
-      popular ? "bg-indigo-600 text-white" : "bg-gray-800 bg-opacity-40"
+    className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
+      popular
+        ? "bg-indigo-600 text-white scale-105 transform translate-y-2 shadow-2xl z-10"
+        : "bg-gray-800 bg-opacity-40"
     }`}
+    style={{ marginTop: popular ? "-20px" : "0" }}
   >
     {popular && (
-      <span className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-white font-semibold py-1 px-3 rounded-full text-sm">
+      <span className="absolute top-[-12px] left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-semibold py-1 px-3 rounded-full text-sm">
         MOST POPULAR
       </span>
     )}
