@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaStar, FaMoneyBillWave } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -8,7 +9,8 @@ const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
           Unlock the Power of <br />
           <span className="text-teal-400">AI in Financial Analysis</span> <br />
-          for Smarter Decisions 💰
+          for Smarter Decisions{" "}
+          <FaMoneyBillWave className="inline-block text-teal-400" />
         </h1>
 
         <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto text-gray-300">
@@ -32,9 +34,13 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col items-center space-y-4 mb-16">
-          <div className="text-gray-300 flex items-center space-x-2 text-lg">
-            <span className="text-yellow-400 text-2xl">⭐ 4.7</span>
-            <span className="text-lg">/ 5 (150+ reviews)</span>
+          <div className="text-gray-300 flex items-center space-x-1 text-lg">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <FaStar key={i} className="text-yellow-400 text-xl" />
+              ))}
+            <span className="ml-2 text-lg">4.7 / 5 (150+ reviews)</span>
           </div>
 
           <div className="flex items-center">
