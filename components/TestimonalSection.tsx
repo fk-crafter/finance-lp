@@ -8,6 +8,7 @@ import { FaStar } from "react-icons/fa";
 const TestimonialsSection = () => {
   return (
     <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white overflow-hidden">
+      <hr className="border-t border-gray-700 my-11 -mt-16" />
       <div className="max-w-7xl mx-auto text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           What People Are Saying About Our Finance Tool

@@ -26,6 +26,7 @@ const PricingPlans = () => {
 
   return (
     <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white">
+      <hr className="border-t border-gray-700 my-8 -mt-12" />
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing Plans</h2>
         <p className="text-gray-300 text-lg mb-8">
@@ -33,7 +34,7 @@ const PricingPlans = () => {
           14-day trial of our Premium features.
         </p>
 
-        <div className="relative flex justify-center mb-12">
+        <div className="relative flex justify-center mb-16">
           <div className="flex w-52 space-x-1 bg-gray-700 rounded-lg p-1 relative">
             <motion.div
               layout

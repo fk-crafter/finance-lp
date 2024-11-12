@@ -16,6 +16,7 @@ import Image from "next/image";
 const FinanceSection = () => {
   return (
     <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-16 px-4 lg:px-8 text-white">
+      <hr className="border-t border-gray-700 my-11 -mt-16" />
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Why Our Finance Tool is Your Best Choice

@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaChartPie, FaBriefcase, FaPiggyBank } from "react-icons/fa";
+import {
+  FaChartPie,
+  FaBriefcase,
+  FaPiggyBank,
+  FaMoneyBillWave,
+  FaWallet,
+  FaCoins,
+} from "react-icons/fa";
 import { AnalysisProps, TiltCardProps } from "@/types";
 
 const AnalysisSection = () => {
@@ -14,18 +21,27 @@ const AnalysisSection = () => {
           </h3>
           <div className="space-y-4">
             <div className="flex items-center justify-center space-x-3 mb-4 mr-4">
+              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
+                <FaWallet />
+              </div>
               <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
                 $7,000
               </div>
               <p className="text-gray-300">Savings</p>
             </div>
             <div className="flex items-center justify-center space-x-3 mb-4 ml-5">
+              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white">
+                <FaBriefcase />
+              </div>
               <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
                 $8,000
               </div>
               <p className="text-gray-300">Investments</p>
             </div>
             <div className="flex items-center justify-center space-x-3">
+              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white">
+                <FaMoneyBillWave />
+              </div>
               <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
                 $4,000
               </div>
