@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import ScrollingBanner from "@/components/ScrollingBanner";
 import TestimonialSection from "@/components/TestimonalSection";
 import PricingPlan from "@/components/PricingPlan";
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <FinanceSection />
       <TestimonialSection />
       <PricingPlan />
+      <CTASection />
       <Footer />
     </div>
   );
