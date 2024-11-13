@@ -68,7 +68,7 @@ const Hero = () => {
               />
             </div>
             <span className="text-gray-300 text-lg ml-4">
-              Join 150+ satisfied users
+              Join 150+ satisfied beta testers
             </span>
           </div>
         </div>

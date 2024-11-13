@@ -6,8 +6,9 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-12">
       <hr className="border-t border-gray-700 my-8 -mt-12" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
-          <div className="flex flex-col items-start space-y-4">
+        <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:items-start">
+          {/* Logo and Social Links */}
+          <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-4">
               <img src="/img/logo.png" alt="Logo" className="w-24" />
             </div>
@@ -24,7 +25,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+          {/* Links Section */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-left">
             <div>
               <h3 className="font-semibold mb-3">Product</h3>
               <ul className="space-y-2">
@@ -90,6 +92,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Newsletter Subscription */}
         <div className="mt-12 text-center md:text-left">
           <h3 className="text-lg font-semibold mb-4">
             Subscribe to our Newsletter
@@ -113,7 +116,8 @@ const Footer = () => {
           </form>
         </div>
 
-        <div className="mt-4 -mb-5 text-center text-gray-500 text-sm">
+        {/* Footer Bottom */}
+        <div className="mt-4 text-center text-gray-500 text-sm">
           &copy; 2024 FinVest. All rights reserved.
         </div>
       </div>
