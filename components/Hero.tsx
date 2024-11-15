@@ -1,24 +1,53 @@
+"use client";
+
+import React from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar, FaMoneyBillWave } from "react-icons/fa";
 
 const Hero = () => {
+  const refStars = React.useRef(null);
+  const refImage = React.useRef(null);
+  const inViewStars = useInView(refStars, { once: true });
+  const inViewImage = useInView(refImage, { once: true });
+
   return (
     <section className="w-full text-white pt-36 pb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12"
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
+        >
           Unlock the Power of <br />
           <span className="text-teal-400">AI in Financial Analysis</span> <br />
           for Smarter Decisions{" "}
           <FaMoneyBillWave className="inline-block text-teal-400" />
-        </h1>
+        </motion.h1>
 
-        <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto text-gray-300">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 1 }}
+          className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto text-gray-300"
+        >
           Access cutting-edge insights, automate expense tracking, and maximize
           your investment performance effortlessly.
-        </p>
+        </motion.p>
 
-        <div className="flex justify-center space-x-6 mb-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="flex justify-center space-x-6 mb-8"
+        >
           <Link
             href="#"
             className="bg-teal-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-teal-600 transition-all duration-300"
@@ -31,9 +60,15 @@ const Hero = () => {
           >
             See More
           </a>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col items-center space-y-4 mb-16">
+        <motion.div
+          ref={refStars}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inViewStars ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+          className="flex flex-col items-center space-y-4 mb-16"
+        >
           <div className="text-gray-300 flex items-center space-x-1 text-lg">
             {Array(5)
               .fill(0)
@@ -71,9 +106,15 @@ const Hero = () => {
               Join 150+ satisfied beta testers
             </span>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 flex justify-center">
+        <motion.div
+          ref={refImage}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={inViewImage ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: 0.2, duration: 1 }}
+          className="mt-16 flex justify-center"
+        >
           <Image
             src="/img/dashboard.jpg"
             alt="Finance Dashboard"
@@ -81,8 +122,8 @@ const Hero = () => {
             height={200}
             className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
