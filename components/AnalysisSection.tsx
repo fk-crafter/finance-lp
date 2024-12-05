@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaChartPie,
   FaBriefcase,
-  FaPiggyBank,
   FaMoneyBillWave,
   FaWallet,
-  FaCoins,
 } from "react-icons/fa";
 import { AnalysisProps, TiltCardProps } from "@/types";
 
@@ -50,16 +49,26 @@ const AnalysisSection = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <h4 className="text-gray-200 font-medium mb-2">
+            <h4 className="text-gray-200 font-medium mb-4">
               Monthly Comparison
             </h4>
             <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center mb-1">
               <p className="text-gray-300 text-xs">This Month</p>
-              <div className="w-1/2 bg-teal-800 h-1 rounded"></div>
+              <motion.div
+                className="w-full bg-teal-800 h-1 rounded"
+                initial={{ width: 0 }}
+                animate={{ width: "50%" }}
+                transition={{ duration: 1, delay: 0.3 }}
+              />
             </div>
             <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center">
               <p className="text-gray-300 text-xs">Last Month</p>
-              <div className="w-1/4 bg-teal-500 h-1 rounded"></div>
+              <motion.div
+                className="w-full bg-teal-500 h-1 rounded"
+                initial={{ width: 0 }}
+                animate={{ width: "25%" }}
+                transition={{ duration: 1, delay: 0.6 }}
+              />
             </div>
           </div>
         </TiltCard>
@@ -80,7 +89,7 @@ const AnalysisSection = () => {
               description="Receive reliable insights to make better financial decisions and grow your wealth."
             />
             <InfoCard
-              icon={<FaPiggyBank className="text-teal-500 text-lg" />}
+              icon={<FaMoneyBillWave className="text-teal-500 text-lg" />}
               title="Savings Optimization"
               description="Identify areas to save and accumulate more efficiently for future goals."
             />
@@ -96,8 +105,8 @@ const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10;
 
     setStyle({
       transform: `rotateY(${x}deg) rotateX(${y}deg)`,
@@ -111,18 +120,21 @@ const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
   };
 
   return (
-    <div
-      className="group bg-white bg-opacity-5 p-6 rounded-lg shadow-md text-center transition-transform duration-300 relative overflow-hidden"
+    <motion.div
+      className="group bg-white bg-opacity-5 p-6 rounded-lg shadow-md text-center relative overflow-hidden"
       style={{
         ...style,
         transition: "transform 0.1s ease-out",
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0, x: -100 }} // Apparition de la gauche
+      animate={{ opacity: 1, x: 0 }} // Fin de l'animation
+      transition={{ duration: 0.5, ease: "easeOut" }} // Durée et fluidité
     >
       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-teal-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"></div>
       {children}
-    </div>
+    </motion.div>
   );
 };
 
