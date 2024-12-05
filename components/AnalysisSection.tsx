@@ -138,7 +138,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
   );
 };
 
-const InfoCard = ({ icon, title, description }: AnalysisProps) => {
+const InfoCard = ({ icon, title, descriptio }: AnalysisProps) => {
   return (
     <div className="flex items-start space-x-4 max-w-md mx-auto md:mx-0">
       <div>{icon}</div>
