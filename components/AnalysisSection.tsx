@@ -97,7 +97,7 @@ const AnalysisSection = () => {
   );
 };
 
-const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
+const TiltCard = ({ children }: TiltCardProps) => {
   const [style, setStyle] = useState({});
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -135,6 +135,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
     </motion.div>
   );
 };
+
 
 const InfoCard = ({ icon, title, description }: AnalysisProps) => {
   return (

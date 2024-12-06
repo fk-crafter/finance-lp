@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaChartLine,
   FaWallet,
@@ -18,19 +19,41 @@ const FinanceSection = () => {
     <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-16 px-4 lg:px-8 text-white">
       <hr className="border-t border-gray-700 my-11 -mt-16" />
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-6"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+        >
           Why Our Finance Tool is Your Best Choice
-        </h2>
-        <p className="text-gray-300 text-lg mb-8">
+        </motion.h2>
+        <motion.p
+          className="text-gray-300 text-lg mb-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           Discover how our financial tool can help you manage, optimize, and
           grow your wealth efficiently.
-        </p>
+        </motion.p>
 
-        <div className="relative mx-auto mb-10 w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+        <motion.div
+          className="relative mx-auto mb-10 w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg"
+          initial={{ scale: 0.9, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <div className="absolute inset-0 bg-gray-800 bg-opacity-30 flex items-center justify-center">
-            <button className="w-20 h-20 rounded-full bg-teal-500 text-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110">
+            <motion.button
+              className="w-20 h-20 rounded-full bg-teal-500 text-white flex items-center justify-center shadow-lg"
+              whileHover={{ scale: 1.2, rotate: 15 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <TbPlayerPlay className="text-3xl" />
-            </button>
+            </motion.button>
           </div>
           <Image
             src="/img/financedash.jpg"
@@ -39,9 +62,22 @@ const FinanceSection = () => {
             width={800}
             height={450}
           />
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.9 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
           <FeatureCard
             icon={<FaWallet className="text-teal-500 text-3xl" />}
             title="Budget Management"
@@ -72,7 +108,7 @@ const FinanceSection = () => {
             title="Analytics & Insights"
             description="Detailed analytics to help you make informed decisions."
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -94,16 +130,39 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   };
 
   return (
-    <div
+    <motion.div
       className="relative flex flex-col items-center text-center p-4 bg-gray-800 bg-opacity-40 rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setMousePosition({ x: 0, y: 0 })}
       style={lightStyle}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
-      <div className="mb-4">{icon}</div>
-      <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
-      <p className="text-gray-400 text-sm">{description}</p>
-    </div>
+      <motion.div
+        className="mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        {icon}
+      </motion.div>
+      <motion.h3
+        className="text-lg font-semibold mb-2 text-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        {title}
+      </motion.h3>
+      <motion.p
+        className="text-gray-400 text-sm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+      >
+        {description}
+      </motion.p>
+    </motion.div>
   );
 };
 
