@@ -32,4 +32,5 @@ export interface PricingCardProps {
   price: string;
   features: string[];
   popular?: boolean;
+  originalPrice?: string;
 }

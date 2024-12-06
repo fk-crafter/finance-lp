@@ -63,41 +63,50 @@ const PricingPlans = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          key={billingCycle}
-          initial={{ opacity: 0, x: billingCycle === "monthly" ? -50 : 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: billingCycle === "monthly" ? 50 : -50 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
-          <PricingCard
-            title="Silver"
-            price={
-              billingCycle === "monthly"
-                ? pricing.monthly.silver
-                : pricing.yearly.silver
-            }
-            features={pricingFeatures.silver}
-          />
-          <PricingCard
-            title="Gold"
-            price={
-              billingCycle === "monthly"
-                ? pricing.monthly.gold
-                : pricing.yearly.gold
-            }
-            features={pricingFeatures.gold}
-            popular
-          />
-          <PricingCard
-            title="Premium"
-            price={
-              billingCycle === "monthly"
-                ? pricing.monthly.premium
-                : pricing.yearly.premium
-            }
-            features={pricingFeatures.premium}
-          />
+  className="grid grid-cols-1 md:grid-cols-3 gap-6"
+  key={billingCycle}
+  initial={{ opacity: 0, x: billingCycle === "monthly" ? -50 : 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: billingCycle === "monthly" ? 50 : -50 }}
+  transition={{ duration: 0.5, ease: "easeInOut" }}
+>
+  <PricingCard
+    title="Silver"
+    price={
+      billingCycle === "monthly"
+        ? pricing.monthly.silver
+        : pricing.yearly.silver.price
+    }
+    originalPrice={
+      billingCycle === "yearly" ? pricing.yearly.silver.original : undefined
+    }
+    features={pricingFeatures.silver}
+  />
+  <PricingCard
+    title="Gold"
+    price={
+      billingCycle === "monthly"
+        ? pricing.monthly.gold
+        : pricing.yearly.gold.price
+    }
+    originalPrice={
+      billingCycle === "yearly" ? pricing.yearly.gold.original : undefined
+    }
+    features={pricingFeatures.gold}
+    popular
+  />
+  <PricingCard
+    title="Premium"
+    price={
+      billingCycle === "monthly"
+        ? pricing.monthly.premium
+        : pricing.yearly.premium.price
+    }
+    originalPrice={
+      billingCycle === "yearly" ? pricing.yearly.premium.original : undefined
+    }
+    features={pricingFeatures.premium}
+  />
         </motion.div>
       </motion.div>
     </motion.section>
@@ -105,7 +114,7 @@ const PricingPlans = () => {
 };
 
 
-const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
+const PricingCard = ({ title, price, originalPrice, features, popular }: PricingCardProps) => (
   <div
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
@@ -120,7 +129,12 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
       </span>
     )}
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-4xl font-bold mb-4">{price}</p>
+    <div className="mb-4">
+      {originalPrice && (
+        <p className="text-gray-400 text-lg line-through">{originalPrice}</p>
+      )}
+      <p className="text-4xl font-bold">{price}</p>
+    </div>
 
     <hr className="border-t border-gray-500 my-4" />
 
@@ -137,5 +151,6 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
     </button>
   </div>
 );
+
 
 export default PricingPlans;

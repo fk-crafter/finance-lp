@@ -93,13 +93,13 @@ export const pricingFeatures = {
 
 export const pricing = {
   monthly: {
-    silver: "$50/month",
-    gold: "$100/month",
-    premium: "$150/month",
+    silver: "$10",
+    gold: "$20",
+    premium: "$30",
   },
   yearly: {
-    silver: "$500/year",
-    gold: "$1000/year",
-    premium: "$1500/year",
+    silver: { price: "$99", original: "$120" },
+    gold: { price: "$199", original: "$240" },
+    premium: { price: "$299", original: "$360" },
   },
 };
