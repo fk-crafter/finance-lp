@@ -138,5 +138,4 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
   </div>
 );
 
-
 export default PricingPlans;
