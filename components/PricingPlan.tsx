@@ -25,16 +25,32 @@ const PricingPlans = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white">
+    <motion.section
+      className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <hr className="border-t border-gray-700 my-8 -mt-12" />
-      <div className="max-w-5xl mx-auto text-center">
+      <motion.div
+        className="max-w-5xl mx-auto text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing Plans</h2>
         <p className="text-gray-300 text-lg mb-8">
           Choose the plan that best suits your needs. All plans come with a free
           14-day trial of our Premium features.
         </p>
 
-        <div className="relative flex justify-center mb-16">
+        <motion.div
+          className="relative flex justify-center mb-16"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <div className="flex w-52 space-x-1 bg-gray-700 rounded-lg p-1 relative">
             <motion.div
               layout
@@ -56,45 +72,33 @@ const PricingPlans = () => {
               Yearly
             </button>
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <PricingCard
-            title="Silver"
-            price={
-              billingCycle === "monthly"
-                ? pricing.monthly.silver
-                : pricing.yearly.silver
-            }
-            features={pricingFeatures.silver}
-          />
-          <PricingCard
-            title="Gold"
-            price={
-              billingCycle === "monthly"
-                ? pricing.monthly.gold
-                : pricing.yearly.gold
-            }
-            features={pricingFeatures.gold}
-            popular
-          />
-          <PricingCard
-            title="Premium"
-            price={
-              billingCycle === "monthly"
-                ? pricing.monthly.premium
-                : pricing.yearly.premium
-            }
-            features={pricingFeatures.premium}
-          />
+          {[
+            { title: "Silver", price: pricing.monthly.silver, features: pricingFeatures.silver },
+            { title: "Gold", price: pricing.monthly.gold, features: pricingFeatures.gold, popular: true },
+            { title: "Premium", price: pricing.monthly.premium, features: pricingFeatures.premium },
+          ].map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <PricingCard {...card} />
+            </motion.div>
+          ))}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
 const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
-  <div
+  <motion.div
+    whileHover={{ scale: 1.05 }}
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
         ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-2xl z-10"
@@ -120,10 +124,13 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
       ))}
     </ul>
 
-    <button className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300">
+    <motion.button
+      whileHover={{ scale: 1.1 }}
+      className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300"
+    >
       Choose Plan
-    </button>
-  </div>
+    </motion.button>
+  </motion.div>
 );
 
 export default PricingPlans;
