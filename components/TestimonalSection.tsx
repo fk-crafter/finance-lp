@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -16,12 +16,11 @@ const ReviewCard = ({
   role: string;
   message: string;
 }) => {
-  
   return (
     <motion.figure
       className="relative w-72 overflow-hidden rounded-2xl border border-gray-700 p-6 bg-gradient-to-b from-gray-900 to-gray-800 shadow-lg transition-transform hover:scale-105 duration-300"
-      initial={{ y: 50 }}
-      whileInView={{ y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
@@ -50,14 +49,14 @@ export const TestimonialsSection = () => {
   return (
     <motion.section
       className="relative h-auto w-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4 lg:px-8"
-      initial={{ y: -50 }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <motion.h2
         className="text-4xl font-extrabold mb-8 text-white"
-        initial={{ y: -20 }}
-        whileInView={{ y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
@@ -65,8 +64,8 @@ export const TestimonialsSection = () => {
       </motion.h2>
       <motion.p
         className="text-gray-300 text-lg mb-12 max-w-2xl text-center"
-        initial={{ y: -20 }}
-        whileInView={{ y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
