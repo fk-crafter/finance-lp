@@ -1,63 +1,64 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import Marquee from "@/components/ui/marquee";
 import { testimonials } from "@/constants";
-import { FaStar } from "react-icons/fa";
 
-const TestimonialsSection = () => {
+const ReviewCard = ({
+  avatar,
+  name,
+  role,
+  message,
+}: {
+  avatar: string;
+  name: string;
+  role: string;
+  message: string;
+}) => {
   return (
-    <section className="bg-gradient-to-b from-gray-800 to-gray-900 py-16 px-4 lg:px-8 text-white overflow-hidden">
-      <hr className="border-t border-gray-700 my-11 -mt-16" />
-      <div className="max-w-7xl mx-auto text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          What People Are Saying About Our Finance Tool
-        </h2>
-        <p className="text-gray-300 text-lg">
-          Discover how our tool has helped users manage, optimize, and grow
-          their wealth.
-        </p>
+    <figure className="relative w-72 overflow-hidden rounded-2xl border border-gray-700 p-6 bg-gradient-to-b from-gray-900 to-gray-800 shadow-lg transition-transform hover:scale-105 duration-300">
+      <div className="flex flex-row items-center gap-4 mb-4">
+        <img className="rounded-full border-2 border-teal-500" width="48" height="48" alt="" src={avatar} />
+        <div className="flex flex-col">
+          <figcaption className="text-md font-bold text-white">{name}</figcaption>
+          <p className="text-sm font-medium text-gray-400">{role}</p>
+        </div>
       </div>
+      <blockquote className="text-sm text-gray-300 italic">{message}</blockquote>
+    </figure>
+  );
+};
 
-      <div className="relative overflow-hidden">
-        <motion.div
-          className="flex space-x-6"
-          initial={{ x: 0 }}
-          animate={{ x: "-100%" }}
-          transition={{
-            repeat: Infinity,
-            duration: 20,
-            ease: "linear",
-          }}
-        >
-          {testimonials.concat(testimonials).map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 bg-opacity-40 rounded-lg p-6 shadow-md flex flex-col items-center text-left w-80 flex-shrink-0 mx-3"
-            >
-              <img
-                src={testimonial.avatar}
-                alt={testimonial.name}
-                className="w-14 h-14 rounded-full mb-3"
-              />
-              <h3 className="text-lg font-semibold mb-1 text-white">
-                {testimonial.name}
-              </h3>
-              <p className="text-sm text-gray-400 mb-2">{testimonial.role}</p>
-              <p className="text-gray-300 text-sm mb-4">
-                {testimonial.message}
-              </p>
-              <div className="flex space-x-1">
-                {Array.from({ length: testimonial.rating }, (_, i) => (
-                  <FaStar key={i} className="text-yellow-400 text-lg" />
-                ))}
-              </div>
-            </div>
+export const TestimonialsSection = () => {
+  const firstRow = testimonials.slice(0, testimonials.length / 2);
+  const secondRow = testimonials.slice(testimonials.length / 2);
+
+  return (
+    <section className="relative h-[500px] w-full flex flex-col items-center justify-center overflow-hidden bg-gray-800 py-16 px-4 lg:px-8">
+      <h2 className="text-3xl font-bold mb-6 text-white">
+        What People Are Saying About Our Finance Tool
+      </h2>
+      <p className="text-gray-300 text-lg mb-8">
+        Discover how our tool has helped users manage, optimize, and grow their wealth.
+      </p>
+      <div className="relative flex w-full flex-col items-center justify-center">
+        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-gray-800 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-gray-800 to-transparent pointer-events-none"></div>
+
+        <Marquee pauseOnHover className="[--duration:20s]">
+          {firstRow.map((testimonial) => (
+            <ReviewCard key={testimonial.name} {...testimonial} />
           ))}
-        </motion.div>
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:20s]">
+          {secondRow.map((testimonial) => (
+            <ReviewCard key={testimonial.name} {...testimonial} />
+          ))}
+        </Marquee>
       </div>
     </section>
   );
 };
+
 
 export default TestimonialsSection;
