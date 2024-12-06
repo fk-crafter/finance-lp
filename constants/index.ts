@@ -90,7 +90,6 @@ export const pricingFeatures = {
   ],
 };
 
-
 export const pricing = {
   monthly: {
     silver: "$10",
