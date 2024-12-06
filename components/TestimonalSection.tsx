@@ -16,6 +16,7 @@ const ReviewCard = ({
   role: string;
   message: string;
 }) => {
+  
   return (
     <motion.figure
       className="relative w-72 overflow-hidden rounded-2xl border border-gray-700 p-6 bg-gradient-to-b from-gray-900 to-gray-800 shadow-lg transition-transform hover:scale-105 duration-300"
