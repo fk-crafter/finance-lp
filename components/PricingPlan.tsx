@@ -12,8 +12,6 @@ const PricingPlans = () => {
     "monthly"
   );
 
- 
-
   return (
     <motion.section
       className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white"
@@ -64,7 +62,14 @@ const PricingPlans = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          key={billingCycle}
+          initial={{ opacity: 0, x: billingCycle === "monthly" ? -50 : 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: billingCycle === "monthly" ? 50 : -50 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
           <PricingCard
             title="Silver"
             price={
@@ -93,11 +98,12 @@ const PricingPlans = () => {
             }
             features={pricingFeatures.premium}
           />
-        </div>
+        </motion.div>
       </motion.div>
     </motion.section>
   );
 };
+
 
 const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
   <div
