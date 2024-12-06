@@ -5,24 +5,14 @@ import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { pricingFeatures } from "@/constants";
 import { PricingCardProps } from "@/types";
+import { pricing } from "@/constants";
 
 const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
     "monthly"
   );
 
-  const pricing = {
-    monthly: {
-      silver: "$50/month",
-      gold: "$100/month",
-      premium: "$150/month",
-    },
-    yearly: {
-      silver: "$500/year",
-      gold: "$1000/year",
-      premium: "$1500/year",
-    },
-  };
+ 
 
   return (
     <motion.section
@@ -75,21 +65,34 @@ const PricingPlans = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { title: "Silver", price: pricing.monthly.silver, features: pricingFeatures.silver },
-            { title: "Gold", price: pricing.monthly.gold, features: pricingFeatures.gold, popular: true },
-            { title: "Premium", price: pricing.monthly.premium, features: pricingFeatures.premium },
-          ].map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <PricingCard {...card} />
-            </motion.div>
-          ))}
+          <PricingCard
+            title="Silver"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.silver
+                : pricing.yearly.silver
+            }
+            features={pricingFeatures.silver}
+          />
+          <PricingCard
+            title="Gold"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.gold
+                : pricing.yearly.gold
+            }
+            features={pricingFeatures.gold}
+            popular
+          />
+          <PricingCard
+            title="Premium"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.premium
+                : pricing.yearly.premium
+            }
+            features={pricingFeatures.premium}
+          />
         </div>
       </motion.div>
     </motion.section>
@@ -97,12 +100,11 @@ const PricingPlans = () => {
 };
 
 const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
+  <div
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
-        ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-2xl z-10"
-        : "bg-gray-800 bg-opacity-40"
+        ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-glow z-10"
+        : "bg-gray-600 bg-opacity-40"
     }`}
     style={{ marginTop: popular ? "-20px" : "0" }}
   >
@@ -124,13 +126,11 @@ const PricingCard = ({ title, price, features, popular }: PricingCardProps) => (
       ))}
     </ul>
 
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300"
-    >
+    <button className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300">
       Choose Plan
-    </motion.button>
-  </motion.div>
+    </button>
+  </div>
 );
+
 
 export default PricingPlans;

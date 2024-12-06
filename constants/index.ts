@@ -89,3 +89,17 @@ export const pricingFeatures = {
     "Unlimited users",
   ],
 };
+
+
+export const pricing = {
+  monthly: {
+    silver: "$50/month",
+    gold: "$100/month",
+    premium: "$150/month",
+  },
+  yearly: {
+    silver: "$500/year",
+    gold: "$1000/year",
+    premium: "$1500/year",
+  },
+};
