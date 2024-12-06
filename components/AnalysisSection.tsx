@@ -2,12 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaChartPie,
-  FaBriefcase,
-  FaMoneyBillWave,
-  FaWallet,
-} from "react-icons/fa";
+import { FaChartPie, FaBriefcase, FaMoneyBillWave, FaWallet } from "react-icons/fa";
 import { AnalysisProps, TiltCardProps } from "@/types";
 
 const AnalysisSection = () => {
@@ -15,9 +10,7 @@ const AnalysisSection = () => {
     <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <TiltCard>
-          <h3 className="text-lg font-semibold text-gray-200 mb-6">
-            Financial Activity
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-200 mb-6">Financial Activity</h3>
           <div className="space-y-4">
             <div className="flex items-center justify-center space-x-3 mb-4 mr-4">
               <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
@@ -49,9 +42,7 @@ const AnalysisSection = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <h4 className="text-gray-200 font-medium mb-4">
-              Monthly Comparison
-            </h4>
+            <h4 className="text-gray-200 font-medium mb-4">Monthly Comparison</h4>
             <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center mb-1">
               <p className="text-gray-300 text-xs">This Month</p>
               <motion.div
@@ -73,7 +64,13 @@ const AnalysisSection = () => {
           </div>
         </TiltCard>
 
-        <div className="space-y-4 md:text-left text-center">
+        <motion.div
+          className="space-y-4 md:text-left text-center"
+          initial={{ opacity: 0, x: 100 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true, amount: 0.5 }} 
+          transition={{ duration: 0.6, ease: "easeOut" }} 
+        >
           <h3 className="text-2xl font-bold leading-tight mb-4">
             Help You Organize <br /> and Grow Your Finances
           </h3>
@@ -94,7 +91,7 @@ const AnalysisSection = () => {
               description="Identify areas to save and accumulate more efficiently for future goals."
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -128,9 +125,10 @@ const TiltCard: React.FC<TiltCardProps> = ({ children }) => {
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, x: -100 }} // Apparition de la gauche
-      animate={{ opacity: 1, x: 0 }} // Fin de l'animation
-      transition={{ duration: 0.5, ease: "easeOut" }} // Durée et fluidité
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-teal-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"></div>
       {children}
