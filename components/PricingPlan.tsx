@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { pricingFeatures } from "@/constants";
+import { pricingFeatures, pricing } from "@/constants";
 import { PricingCardProps } from "@/types";
-import { pricing } from "@/constants";
 
 const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
@@ -63,62 +62,61 @@ const PricingPlans = () => {
         </motion.div>
 
         <motion.div
-  className="grid grid-cols-1 md:grid-cols-3 gap-6"
-  key={billingCycle}
-  initial={{ opacity: 0, x: billingCycle === "monthly" ? -50 : 50 }}
-  animate={{ opacity: 1, x: 0 }}
-  exit={{ opacity: 0, x: billingCycle === "monthly" ? 50 : -50 }}
-  transition={{ duration: 0.5, ease: "easeInOut" }}
->
-  <PricingCard
-    title="Silver"
-    price={
-      billingCycle === "monthly"
-        ? pricing.monthly.silver
-        : pricing.yearly.silver.price
-    }
-    originalPrice={
-      billingCycle === "yearly" ? pricing.yearly.silver.original : undefined
-    }
-    features={pricingFeatures.silver}
-  />
-  <PricingCard
-    title="Gold"
-    price={
-      billingCycle === "monthly"
-        ? pricing.monthly.gold
-        : pricing.yearly.gold.price
-    }
-    originalPrice={
-      billingCycle === "yearly" ? pricing.yearly.gold.original : undefined
-    }
-    features={pricingFeatures.gold}
-    popular
-  />
-  <PricingCard
-    title="Premium"
-    price={
-      billingCycle === "monthly"
-        ? pricing.monthly.premium
-        : pricing.yearly.premium.price
-    }
-    originalPrice={
-      billingCycle === "yearly" ? pricing.yearly.premium.original : undefined
-    }
-    features={pricingFeatures.premium}
-  />
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          key={billingCycle}
+          initial={{ opacity: 0, x: billingCycle === "monthly" ? -50 : 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: billingCycle === "monthly" ? 50 : -50 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <PricingCard
+            title="Silver"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.silver
+                : pricing.yearly.silver.price
+            }
+            originalPrice={
+              billingCycle === "yearly" ? pricing.yearly.silver.original : undefined
+            }
+            features={pricingFeatures.silver}
+          />
+          <PricingCard
+            title="Gold"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.gold
+                : pricing.yearly.gold.price
+            }
+            originalPrice={
+              billingCycle === "yearly" ? pricing.yearly.gold.original : undefined
+            }
+            features={pricingFeatures.gold}
+            popular
+          />
+          <PricingCard
+            title="Premium"
+            price={
+              billingCycle === "monthly"
+                ? pricing.monthly.premium
+                : pricing.yearly.premium.price
+            }
+            originalPrice={
+              billingCycle === "yearly" ? pricing.yearly.premium.original : undefined
+            }
+            features={pricingFeatures.premium}
+          />
         </motion.div>
       </motion.div>
     </motion.section>
   );
 };
 
-
 const PricingCard = ({ title, price, originalPrice, features, popular }: PricingCardProps) => (
   <div
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
-        ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-glow z-10"
+        ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-[0_0_20px_rgba(0,255,200,0.5)] z-10"
         : "bg-gray-600 bg-opacity-40"
     }`}
     style={{ marginTop: popular ? "-20px" : "0" }}
@@ -151,6 +149,5 @@ const PricingCard = ({ title, price, originalPrice, features, popular }: Pricing
     </button>
   </div>
 );
-
 
 export default PricingPlans;
