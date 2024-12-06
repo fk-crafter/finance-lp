@@ -116,7 +116,7 @@ const PricingCard = ({ title, price, originalPrice, features, popular }: Pricing
   <div
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
-        ? "bg-teal-600 text-white scale-105 transform translate-y-2 shadow-[0_0_20px_rgba(0,255,200,0.5)] z-10"
+        ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
         : "bg-gray-600 bg-opacity-40"
     }`}
     style={{ marginTop: popular ? "-20px" : "0" }}
@@ -149,5 +149,6 @@ const PricingCard = ({ title, price, originalPrice, features, popular }: Pricing
     </button>
   </div>
 );
+
 
 export default PricingPlans;

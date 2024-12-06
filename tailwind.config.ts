@@ -42,9 +42,6 @@ const config = {
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
-      boxShadow: {
-        glow: "0 0 15px rgba(0, 255, 200, 0.8)", // Ajout d'une lueur statique pour éviter les clignotements
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],
