@@ -49,7 +49,7 @@ const FinanceSection = () => {
           <div className="absolute inset-0 bg-gray-800 bg-opacity-30 flex items-center justify-center">
             <motion.button
               className="w-20 h-20 rounded-full bg-teal-500 text-white flex items-center justify-center shadow-lg"
-              whileHover={{ scale: 1.2, rotate: 15 }}
+              whileHover={{ scale: 1.2}}
               whileTap={{ scale: 0.9 }}
             >
               <TbPlayerPlay className="text-3xl" />
