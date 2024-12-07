@@ -114,13 +114,15 @@ const PricingPlans = () => {
 
 const PricingCard = ({ title, price, originalPrice, features, popular }: PricingCardProps) => (
   <div
-    className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
-      popular
-        ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
-        : "bg-gray-600 bg-opacity-40"
-    }`}
-    style={{ marginTop: popular ? "-20px" : "0" }}
-  >
+  className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
+    popular
+      ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
+      : "bg-gray-600 bg-opacity-40"
+  }`}
+  style={{ marginTop: popular ? "-20px" : "0" }}
+>
+
+
     {popular && (
       <span className="absolute top-[-12px] left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-semibold py-1 px-3 rounded-full text-sm">
         MOST POPULAR
