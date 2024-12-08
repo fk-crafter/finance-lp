@@ -55,7 +55,7 @@ const CTASection = () => {
             href="#"
             className="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-gray-900 transition duration-300"
           >
-            Contacttt
+            Contact
           </Link>
         </motion.div>
       </motion.div>
