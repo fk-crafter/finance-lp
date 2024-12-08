@@ -69,15 +69,6 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="flex flex-col items-center space-y-4 mb-12"
         >
-          <div className="text-gray-300 flex flex-wrap justify-center items-center space-x-1 text-sm sm:text-lg">
-            {Array(5)
-              .fill(0)
-              .map((_, i) => (
-                <FaStar key={i} className="text-yellow-400 text-lg" />
-              ))}
-            <span className="ml-2">4.7 / 5 (150+ reviews)</span>
-          </div>
-
           <div className="flex items-center flex-wrap justify-center space-x-2">
             <div className="flex -space-x-3">
               <Image
@@ -105,6 +96,15 @@ const Hero = () => {
             <span className="text-gray-300 text-base sm:text-lg">
               Join 150+ satisfied beta testers
             </span>
+          </div>
+
+          <div className="text-gray-300 flex flex-wrap justify-center items-center space-x-1 text-sm sm:text-lg">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <FaStar key={i} className="text-yellow-400 text-lg" />
+              ))}
+            <span className="ml-2">4.7 / 5 (150+ reviews)</span>
           </div>
         </motion.div>
 
