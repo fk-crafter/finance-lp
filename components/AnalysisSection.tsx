@@ -7,44 +7,56 @@ import { AnalysisProps, TiltCardProps } from "@/types";
 
 const AnalysisSection = () => {
   return (
-    <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-12 px-4 sm:py-16 lg:py-20 text-white">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* TiltCard section */}
         <TiltCard>
-          <h3 className="text-lg font-semibold text-gray-200 mb-6">Financial Activity</h3>
-          <div className="space-y-4">
-            <div className="flex items-center justify-center space-x-3 mb-4 mr-4">
-              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
-                <FaWallet />
-              </div>
-              <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
-                $7,000
-              </div>
-              <p className="text-gray-300">Savings</p>
-            </div>
-            <div className="flex items-center justify-center space-x-3 mb-4 ml-5">
-              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white">
-                <FaBriefcase />
-              </div>
-              <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
-                $8,000
-              </div>
-              <p className="text-gray-300">Investments</p>
-            </div>
-            <div className="flex items-center justify-center space-x-3">
-              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white">
-                <FaMoneyBillWave />
-              </div>
-              <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
-                $4,000
-              </div>
-              <p className="text-gray-300">Expenses</p>
-            </div>
-          </div>
+          <h3 className="lg:text-lg text-base font-semibold text-gray-200 mb-6 text-center lg:text-left">
+            Financial Activity
+          </h3>
+          <div className="space-y-6">
+  {/* Savings */}
+  <div className="flex items-center justify-center space-x-4">
+    <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
+      <FaWallet />
+    </div>
+    <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
+      $7,000
+    </div>
+    <p className="text-gray-300 text-base">Savings</p>
+  </div>
+  {/* Investments */}
+  <div className="flex items-center justify-center space-x-4 lg:ml-6">
+    <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
+      <FaBriefcase />
+    </div>
+    <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
+      $8,000
+    </div>
+    <p className="text-gray-300 text-base">Investments</p>
+  </div>
+  {/* Expenses */}
+  <div className="flex items-center justify-center space-x-4">
+    <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white">
+      <FaMoneyBillWave />
+    </div>
+    <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
+      $4,000
+    </div>
+    <p className="text-gray-300 text-base">Expenses</p>
+  </div>
+</div>
 
-          <div className="mt-8 text-center">
-            <h4 className="text-gray-200 font-medium mb-4">Monthly Comparison</h4>
-            <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center mb-1">
-              <p className="text-gray-300 text-xs">This Month</p>
+
+
+
+          {/* Monthly Comparison */}
+          <div className="mt-8 text-center lg:text-left">
+            <h4 className="text-gray-200 font-medium mb-4 lg:text-lg text-base">
+              Monthly Comparison
+            </h4>
+            <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center mb-2">
+              <p className="text-gray-300 text-xs lg:text-sm">This Month</p>
               <motion.div
                 className="w-full bg-teal-800 h-1 rounded"
                 initial={{ width: 0 }}
@@ -53,7 +65,7 @@ const AnalysisSection = () => {
               />
             </div>
             <div className="bg-gray-800 rounded-lg p-2 flex justify-between items-center">
-              <p className="text-gray-300 text-xs">Last Month</p>
+              <p className="text-gray-300 text-xs lg:text-sm">Last Month</p>
               <motion.div
                 className="w-full bg-teal-500 h-1 rounded"
                 initial={{ width: 0 }}
@@ -64,14 +76,15 @@ const AnalysisSection = () => {
           </div>
         </TiltCard>
 
+        {/* Info Section */}
         <motion.div
-          className="space-y-4 md:text-left text-center"
-          initial={{ opacity: 0, x: 100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ once: true, amount: 0.5 }} 
-          transition={{ duration: 0.6, ease: "easeOut" }} 
+          className="space-y-6 text-center lg:text-left"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h3 className="text-2xl font-bold leading-tight mb-4">
+          <h3 className="text-xl lg:text-2xl font-bold leading-tight mb-4">
             Help You Organize <br /> and Grow Your Finances
           </h3>
           <div className="space-y-4">
@@ -136,10 +149,9 @@ const TiltCard = ({ children }: TiltCardProps) => {
   );
 };
 
-
 const InfoCard = ({ icon, title, description }: AnalysisProps) => {
   return (
-    <div className="flex items-start space-x-4 max-w-md mx-auto md:mx-0">
+    <div className="flex items-start space-x-4 max-w-sm mx-auto lg:mx-0">
       <div>{icon}</div>
       <div>
         <h4 className="text-md font-semibold">{title}</h4>
