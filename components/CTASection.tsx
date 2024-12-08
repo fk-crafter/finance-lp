@@ -26,7 +26,7 @@ const CTASection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.1 }}
         >
-          Join Our Beta Testers in the Next Opening Wave!
+          Join the Beta Wave Now!
         </motion.h2>
         <motion.p
           className="text-gray-300 mb-8"
@@ -35,8 +35,7 @@ const CTASection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
-          Sign now to gain 14-days free access during the next beta-testing
-          wave.
+          Sign to gain 14-days free access during the next beta-testing wave.
         </motion.p>
         <motion.div
           className="flex justify-center space-x-6"
