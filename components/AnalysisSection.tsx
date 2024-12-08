@@ -9,13 +9,11 @@ const AnalysisSection = () => {
   return (
     <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-12 px-4 sm:py-16 lg:py-20 text-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* TiltCard section */}
         <TiltCard>
           <h3 className="lg:text-lg text-base font-semibold text-gray-200 mb-6 text-center lg:text-left">
             Financial Activity
           </h3>
           <div className="space-y-6">
-  {/* Savings */}
   <div className="flex items-center justify-center space-x-4">
     <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
       <FaWallet />
@@ -25,8 +23,7 @@ const AnalysisSection = () => {
     </div>
     <p className="text-gray-300 text-base">Savings</p>
   </div>
-  {/* Investments */}
-  <div className="flex items-center justify-center space-x-4 lg:ml-6">
+  <div className="flex items-center justify-center space-x-4 ml-7 lg:ml-6">
     <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
       <FaBriefcase />
     </div>
@@ -35,8 +32,7 @@ const AnalysisSection = () => {
     </div>
     <p className="text-gray-300 text-base">Investments</p>
   </div>
-  {/* Expenses */}
-  <div className="flex items-center justify-center space-x-4">
+  <div className="flex items-center justify-center space-x-4 ml-2">
     <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white">
       <FaMoneyBillWave />
     </div>
@@ -46,11 +42,6 @@ const AnalysisSection = () => {
     <p className="text-gray-300 text-base">Expenses</p>
   </div>
 </div>
-
-
-
-
-          {/* Monthly Comparison */}
           <div className="mt-8 text-center lg:text-left">
             <h4 className="text-gray-200 font-medium mb-4 lg:text-lg text-base">
               Monthly Comparison
@@ -76,7 +67,6 @@ const AnalysisSection = () => {
           </div>
         </TiltCard>
 
-        {/* Info Section */}
         <motion.div
           className="space-y-6 text-center lg:text-left"
           initial={{ opacity: 0, x: 100 }}
