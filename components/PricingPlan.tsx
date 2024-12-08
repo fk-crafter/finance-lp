@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
@@ -77,7 +77,9 @@ const PricingPlans = () => {
                 : pricing.yearly.silver.price
             }
             originalPrice={
-              billingCycle === "yearly" ? pricing.yearly.silver.original : undefined
+              billingCycle === "yearly"
+                ? pricing.yearly.silver.original
+                : undefined
             }
             features={pricingFeatures.silver}
           />
@@ -89,7 +91,9 @@ const PricingPlans = () => {
                 : pricing.yearly.gold.price
             }
             originalPrice={
-              billingCycle === "yearly" ? pricing.yearly.gold.original : undefined
+              billingCycle === "yearly"
+                ? pricing.yearly.gold.original
+                : undefined
             }
             features={pricingFeatures.gold}
             popular
@@ -102,7 +106,9 @@ const PricingPlans = () => {
                 : pricing.yearly.premium.price
             }
             originalPrice={
-              billingCycle === "yearly" ? pricing.yearly.premium.original : undefined
+              billingCycle === "yearly"
+                ? pricing.yearly.premium.original
+                : undefined
             }
             features={pricingFeatures.premium}
           />
@@ -112,17 +118,21 @@ const PricingPlans = () => {
   );
 };
 
-const PricingCard = ({ title, price, originalPrice, features, popular }: PricingCardProps) => (
+const PricingCard = ({
+  title,
+  price,
+  originalPrice,
+  features,
+  popular,
+}: PricingCardProps) => (
   <div
-  className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
-    popular
-      ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
-      : "bg-gray-600 bg-opacity-40"
-  }`}
-  style={{ marginTop: popular ? "-20px" : "0" }}
->
-
-
+    className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
+      popular
+        ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
+        : "bg-gray-600 bg-opacity-40"
+    }`}
+    style={{ marginTop: popular ? "-20px" : "0" }}
+  >
     {popular && (
       <span className="absolute top-[-12px] left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-semibold py-1 px-3 rounded-full text-sm">
         MOST POPULAR
@@ -140,8 +150,9 @@ const PricingCard = ({ title, price, originalPrice, features, popular }: Pricing
 
     <ul className="text-gray-300 mb-6 space-y-2">
       {features.map((feature, index) => (
-        <li key={index} className="flex items-center">
-          <FaCheck className="text-teal-500 mr-2" /> {feature}
+        <li key={index} className="flex items-start gap-2">
+          <FaCheck className="text-teal-500 mt-1" />
+          <span>{feature}</span>
         </li>
       ))}
     </ul>
@@ -151,6 +162,5 @@ const PricingCard = ({ title, price, originalPrice, features, popular }: Pricing
     </button>
   </div>
 );
-
 
 export default PricingPlans;
