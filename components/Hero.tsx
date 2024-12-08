@@ -120,7 +120,7 @@ const Hero = () => {
             alt="Finance Dashboard"
             width={600}
             height={300}
-            className="w-full max-w-md sm:max-w-lg lg:max-w-2xl rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+            className="w-full max-w-md sm:max-w-lg lg:max-w-lg rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
           />
         </motion.div>
       </motion.div>
