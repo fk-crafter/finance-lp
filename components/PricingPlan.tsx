@@ -130,7 +130,7 @@ const PricingCard = ({
       popular
         ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
         : "bg-gray-600 bg-opacity-40"
-    }`}
+    } mt-4 mb-4 md:mt-0 md:mb-0`}
     style={{ marginTop: popular ? "-20px" : "0" }}
   >
     {popular && (
