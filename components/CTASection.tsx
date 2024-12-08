@@ -47,7 +47,7 @@ const CTASection = () => {
         >
           <Link
             href="#"
-            className="bg-teal-500 text-white px-6 py-3 rounded-md font-medium hover:bg-teal-600 transition duration-300"
+            className="bg-teal-500 text-white px-6 py-3 rounded-md font-medium hover:bg-teal-600 transition duration-300 whitespace-nowrap"
           >
             Join Waitlist
           </Link>
@@ -55,7 +55,7 @@ const CTASection = () => {
             href="#"
             className="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-gray-900 transition duration-300"
           >
-            Contact
+            Contacttt
           </Link>
         </motion.div>
       </motion.div>
