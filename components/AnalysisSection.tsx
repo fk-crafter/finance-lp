@@ -23,7 +23,7 @@ const AnalysisSection = () => {
     </div>
     <p className="text-gray-300 text-base">Savings</p>
   </div>
-  <div className="flex items-center justify-center space-x-4 ml-7 lg:ml-6">
+  <div className="flex items-center justify-center space-x-4 ml-8 lg:ml-6">
     <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
       <FaBriefcase />
     </div>
@@ -32,7 +32,7 @@ const AnalysisSection = () => {
     </div>
     <p className="text-gray-300 text-base">Investments</p>
   </div>
-  <div className="flex items-center justify-center space-x-4 ml-2">
+  <div className="flex items-center justify-center space-x-4 ml-3">
     <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white">
       <FaMoneyBillWave />
     </div>

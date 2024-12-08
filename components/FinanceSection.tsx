@@ -16,11 +16,11 @@ import Image from "next/image";
 
 const FinanceSection = () => {
   return (
-    <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-16 px-4 lg:px-8 text-white">
-      <hr className="border-t border-gray-700 my-11 -mt-16" />
+    <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-12 px-4 sm:px-6 lg:px-8 text-white">
+      <hr className="border-t border-gray-700 my-8" />
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-6"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -29,7 +29,7 @@ const FinanceSection = () => {
           Why Our Finance Tool is Your Best Choice
         </motion.h2>
         <motion.p
-          className="text-gray-300 text-lg mb-8"
+          className="text-gray-300 text-base sm:text-lg mb-6"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -40,7 +40,7 @@ const FinanceSection = () => {
         </motion.p>
 
         <motion.div
-          className="relative mx-auto mb-10 w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg"
+          className="relative mx-auto mb-8 w-full max-w-sm sm:max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg"
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -48,11 +48,11 @@ const FinanceSection = () => {
         >
           <div className="absolute inset-0 bg-gray-800 bg-opacity-30 flex items-center justify-center">
             <motion.button
-              className="w-20 h-20 rounded-full bg-teal-500 text-white flex items-center justify-center shadow-lg"
-              whileHover={{ scale: 1.2}}
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-teal-500 text-white flex items-center justify-center shadow-lg"
+              whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <TbPlayerPlay className="text-3xl" />
+              <TbPlayerPlay className="text-2xl sm:text-3xl" />
             </motion.button>
           </div>
           <Image
@@ -65,7 +65,7 @@ const FinanceSection = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -79,32 +79,32 @@ const FinanceSection = () => {
           }}
         >
           <FeatureCard
-            icon={<FaWallet className="text-teal-500 text-3xl" />}
+            icon={<FaWallet className="text-teal-500 text-2xl sm:text-3xl" />}
             title="Budget Management"
             description="Track and manage your budget effortlessly."
           />
           <FeatureCard
-            icon={<FaShieldAlt className="text-teal-500 text-3xl" />}
+            icon={<FaShieldAlt className="text-teal-500 text-2xl sm:text-3xl" />}
             title="Data Security"
             description="We prioritize your data security with top-notch protection."
           />
           <FeatureCard
-            icon={<FaBullseye className="text-teal-500 text-3xl" />}
+            icon={<FaBullseye className="text-teal-500 text-2xl sm:text-3xl" />}
             title="Investment Goals"
             description="Set and reach your financial goals with ease."
           />
           <FeatureCard
-            icon={<FaGlobe className="text-teal-500 text-3xl" />}
+            icon={<FaGlobe className="text-teal-500 text-2xl sm:text-3xl" />}
             title="Global Access"
             description="Access your data and insights anytime, anywhere."
           />
           <FeatureCard
-            icon={<FaBalanceScale className="text-teal-500 text-3xl" />}
+            icon={<FaBalanceScale className="text-teal-500 text-2xl sm:text-3xl" />}
             title="Financial Planning"
             description="Get insights for long-term financial planning."
           />
           <FeatureCard
-            icon={<FaChartLine className="text-teal-500 text-3xl" />}
+            icon={<FaChartLine className="text-teal-500 text-2xl sm:text-3xl" />}
             title="Analytics & Insights"
             description="Detailed analytics to help you make informed decisions."
           />
@@ -139,7 +139,7 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
       whileTap={{ scale: 0.95 }}
     >
       <motion.div
-        className="mb-4"
+        className="mb-2 sm:mb-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
@@ -147,7 +147,7 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
         {icon}
       </motion.div>
       <motion.h3
-        className="text-lg font-semibold mb-2 text-white"
+        className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.2 }}
