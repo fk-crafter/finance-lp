@@ -64,7 +64,7 @@ export const TestimonialsSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        What People Are Saying About Our Finance Tool
+        Hear From Our Users
       </motion.h2>
       <motion.p
         className="text-gray-300 text-sm sm:text-lg mb-8 sm:mb-12 max-w-xl sm:max-w-2xl text-center"
