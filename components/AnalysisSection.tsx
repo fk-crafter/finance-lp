@@ -2,7 +2,12 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaChartPie, FaBriefcase, FaMoneyBillWave, FaWallet } from "react-icons/fa";
+import {
+  FaChartPie,
+  FaBriefcase,
+  FaMoneyBillWave,
+  FaWallet,
+} from "react-icons/fa";
 import { AnalysisProps, TiltCardProps } from "@/types";
 
 const AnalysisSection = () => {
@@ -14,34 +19,34 @@ const AnalysisSection = () => {
             Financial Activity
           </h3>
           <div className="space-y-6">
-  <div className="flex items-center justify-center space-x-4">
-    <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
-      <FaWallet />
-    </div>
-    <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
-      $7,000
-    </div>
-    <p className="text-gray-300 text-base">Savings</p>
-  </div>
-  <div className="flex items-center justify-center space-x-4 ml-8 lg:ml-6">
-    <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
-      <FaBriefcase />
-    </div>
-    <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
-      $8,000
-    </div>
-    <p className="text-gray-300 text-base">Investments</p>
-  </div>
-  <div className="flex items-center justify-center space-x-4 ml-3">
-    <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white">
-      <FaMoneyBillWave />
-    </div>
-    <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
-      $4,000
-    </div>
-    <p className="text-gray-300 text-base">Expenses</p>
-  </div>
-</div>
+            <div className="flex items-center justify-center space-x-4">
+              <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                <FaWallet />
+              </div>
+              <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
+                $7,000
+              </div>
+              <p className="text-gray-300 text-base">Savings</p>
+            </div>
+            <div className="flex items-center justify-center space-x-4 ml-8 lg:ml-6">
+              <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
+                <FaBriefcase />
+              </div>
+              <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
+                $8,000
+              </div>
+              <p className="text-gray-300 text-base">Investments</p>
+            </div>
+            <div className="flex items-center justify-center space-x-4 ml-3">
+              <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white">
+                <FaMoneyBillWave />
+              </div>
+              <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
+                $4,000
+              </div>
+              <p className="text-gray-300 text-base">Expenses</p>
+            </div>
+          </div>
           <div className="mt-8 text-center lg:text-left">
             <h4 className="text-gray-200 font-medium mb-4 lg:text-lg text-base">
               Monthly Comparison

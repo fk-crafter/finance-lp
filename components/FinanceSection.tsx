@@ -84,7 +84,9 @@ const FinanceSection = () => {
             description="Track and manage your budget effortlessly."
           />
           <FeatureCard
-            icon={<FaShieldAlt className="text-teal-500 text-2xl sm:text-3xl" />}
+            icon={
+              <FaShieldAlt className="text-teal-500 text-2xl sm:text-3xl" />
+            }
             title="Data Security"
             description="We prioritize your data security with top-notch protection."
           />
@@ -99,12 +101,16 @@ const FinanceSection = () => {
             description="Access your data and insights anytime, anywhere."
           />
           <FeatureCard
-            icon={<FaBalanceScale className="text-teal-500 text-2xl sm:text-3xl" />}
+            icon={
+              <FaBalanceScale className="text-teal-500 text-2xl sm:text-3xl" />
+            }
             title="Financial Planning"
             description="Get insights for long-term financial planning."
           />
           <FeatureCard
-            icon={<FaChartLine className="text-teal-500 text-2xl sm:text-3xl" />}
+            icon={
+              <FaChartLine className="text-teal-500 text-2xl sm:text-3xl" />
+            }
             title="Analytics & Insights"
             description="Detailed analytics to help you make informed decisions."
           />
