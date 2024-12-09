@@ -37,7 +37,13 @@ const Hero = () => {
         >
           Unlock the Power of <br />
           <span className="text-teal-400 drop-shadow-[0_0_10px_#14b8a6]">
-            AI in Financial Analysis
+            AI in{" "}
+            <span className="relative inline-block px-3 py-1 bg-transparent border-2 border-teal-500 rounded-md text-teal-400 shadow-[0_0_20px_#14b8a6]">
+              Financial
+            </span>
+          </span>{" "}
+          <span className="text-teal-400 drop-shadow-[0_0_10px_#14b8a6]">
+            Analysis
           </span>{" "}
           <br />
           for Smarter Decisions{" "}
