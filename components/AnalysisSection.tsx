@@ -12,23 +12,35 @@ import { AnalysisProps, TiltCardProps } from "@/types";
 
 const AnalysisSection = () => {
   return (
-    <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-12 px-4 sm:py-16 lg:py-20 text-white">
+    <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 py-12 px-4 sm:py-16 lg:py-20 text-white overflow-hidden">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-500 opacity-20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-52 h-52 bg-indigo-500 opacity-20 rounded-full filter blur-3xl animate-pulse delay-300"></div>
+      </div>
+
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <TiltCard>
           <h3 className="lg:text-lg text-base font-semibold text-gray-200 mb-6 text-center lg:text-left">
             Financial Activity
           </h3>
           <div className="space-y-6">
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
+            <motion.div
+              className="flex items-center justify-center space-x-4"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white text-lg font-bold drop-shadow-[0_0_10px_#14b8a6]">
                 <FaWallet />
               </div>
-              <div className="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center text-white text-md font-bold">
+              <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
                 $7,000
               </div>
               <p className="text-gray-300 text-base">Savings</p>
-            </div>
-            <div className="flex items-center justify-center space-x-4 ml-8 lg:ml-6">
+            </motion.div>
+
+            <motion.div
+              className="flex items-center justify-center space-x-4 ml-8 lg:ml-7"
+              whileHover={{ scale: 1.05 }}
+            >
               <div className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center text-white">
                 <FaBriefcase />
               </div>
@@ -36,17 +48,22 @@ const AnalysisSection = () => {
                 $8,000
               </div>
               <p className="text-gray-300 text-base">Investments</p>
-            </div>
-            <div className="flex items-center justify-center space-x-4 ml-3">
-              <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white">
+            </motion.div>
+
+            <motion.div
+              className="flex items-center justify-center space-x-4 ml-3"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-white drop-shadow-[0_0_10px_#14b8a6]">
                 <FaMoneyBillWave />
               </div>
               <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center text-white">
                 $4,000
               </div>
               <p className="text-gray-300 text-base">Expenses</p>
-            </div>
+            </motion.div>
           </div>
+
           <div className="mt-8 text-center lg:text-left">
             <h4 className="text-gray-200 font-medium mb-4 lg:text-lg text-base">
               Monthly Comparison
@@ -80,21 +97,31 @@ const AnalysisSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h3 className="text-xl lg:text-2xl font-bold leading-tight mb-4">
-            Help You Organize <br /> and Grow Your Finances
+            Organize Your <br />{" "}
+            <span className="relative inline-block px-3 py-1 bg-transparent border-2 border-teal-500 rounded-md text-teal-400 shadow-[0_0_10px_#14b8a6]">
+              Finances
+            </span>{" "}
+            Efficiently
           </h3>
           <div className="space-y-4">
             <InfoCard
-              icon={<FaChartPie className="text-teal-500 text-lg" />}
+              icon={
+                <FaChartPie className="text-teal-500 text-lg drop-shadow-[0_0_10px_#14b8a6]" />
+              }
               title="Smart Financial Planning"
               description="Easily track your savings, expenses, and investments to optimize your budget."
             />
             <InfoCard
-              icon={<FaBriefcase className="text-teal-500 text-lg" />}
+              icon={
+                <FaBriefcase className="text-teal-500 text-lg drop-shadow-[0_0_10px_#14b8a6]" />
+              }
               title="Professional Investment Insights"
               description="Receive reliable insights to make better financial decisions and grow your wealth."
             />
             <InfoCard
-              icon={<FaMoneyBillWave className="text-teal-500 text-lg" />}
+              icon={
+                <FaMoneyBillWave className="text-teal-500 text-lg drop-shadow-[0_0_10px_#14b8a6]" />
+              }
               title="Savings Optimization"
               description="Identify areas to save and accumulate more efficiently for future goals."
             />
@@ -106,39 +133,12 @@ const AnalysisSection = () => {
 };
 
 const TiltCard = ({ children }: TiltCardProps) => {
-  const [style, setStyle] = useState({});
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10;
-
-    setStyle({
-      transform: `rotateY(${x}deg) rotateX(${y}deg)`,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setStyle({
-      transform: `rotateY(0deg) rotateX(0deg)`,
-    });
-  };
-
   return (
     <motion.div
       className="group bg-white bg-opacity-5 p-6 rounded-lg shadow-md text-center relative overflow-hidden"
-      style={{
-        ...style,
-        transition: "transform 0.1s ease-out",
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-teal-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"></div>
       {children}
     </motion.div>
   );
