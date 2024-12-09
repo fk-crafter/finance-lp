@@ -145,7 +145,7 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
       whileTap={{ scale: 0.95 }}
     >
       <motion.div
-        className="mb-2 sm:mb-4"
+        className="mb-2 sm:mb-4 drop-shadow-[0_0_10px_#14b8a6]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
