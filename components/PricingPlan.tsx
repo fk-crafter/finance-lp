@@ -76,12 +76,8 @@ const PricingPlans = () => {
                 ? pricing.monthly.silver
                 : pricing.yearly.silver.price
             }
-            originalPrice={
-              billingCycle === "yearly"
-                ? pricing.yearly.silver.original
-                : undefined
-            }
             features={pricingFeatures.silver}
+            trialText="14 Days Free Trial"
           />
           <PricingCard
             title="Gold"
@@ -90,13 +86,9 @@ const PricingPlans = () => {
                 ? pricing.monthly.gold
                 : pricing.yearly.gold.price
             }
-            originalPrice={
-              billingCycle === "yearly"
-                ? pricing.yearly.gold.original
-                : undefined
-            }
             features={pricingFeatures.gold}
             popular
+            trialText="30 Days Satisfaction or Refund"
           />
           <PricingCard
             title="Premium"
@@ -105,12 +97,8 @@ const PricingPlans = () => {
                 ? pricing.monthly.premium
                 : pricing.yearly.premium.price
             }
-            originalPrice={
-              billingCycle === "yearly"
-                ? pricing.yearly.premium.original
-                : undefined
-            }
             features={pricingFeatures.premium}
+            trialText="14 Days Free Trial"
           />
         </motion.div>
       </motion.div>
@@ -121,16 +109,16 @@ const PricingPlans = () => {
 const PricingCard = ({
   title,
   price,
-  originalPrice,
   features,
   popular,
-}: PricingCardProps) => (
+  trialText,
+}: PricingCardProps & { trialText: string }) => (
   <div
     className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
       popular
-        ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10"
-        : "bg-gray-600 bg-opacity-40"
-    } mt-4 mb-4 md:mt-0 md:mb-0`}
+        ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10 shadow-[0_0_20px_#14b8a6]"
+        : "bg-gray-600 bg-opacity-40 shadow-[0_0_10px_#14b8a6]"
+    } mt-4 mb-4 md:mt-0 md:mb-0 pb-16 lg:pb-8`}
     style={{ marginTop: popular ? "-20px" : "0" }}
   >
     {popular && (
@@ -140,9 +128,6 @@ const PricingCard = ({
     )}
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <div className="mb-4">
-      {originalPrice && (
-        <p className="text-gray-400 text-lg line-through">{originalPrice}</p>
-      )}
       <p className="text-4xl font-bold">{price}</p>
     </div>
 
@@ -156,6 +141,8 @@ const PricingCard = ({
         </li>
       ))}
     </ul>
+
+    <p className="text-teal-400 text-sm font-medium mb-4">{trialText}</p>
 
     <button className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300">
       Choose Plan
