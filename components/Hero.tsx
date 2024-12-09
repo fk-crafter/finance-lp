@@ -13,12 +13,21 @@ const Hero = () => {
   const inViewImage = useInView(refImage, { once: true });
 
   return (
-    <section className="w-full text-white pt-28 pb-12 lg:pt-36 lg:pb-24">
+    <section className="relative w-full text-white pt-28 pb-12 lg:pt-36 lg:pb-24 overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-gray-900 via-gray-800 to-black">
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-teal-500 opacity-30 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-indigo-500 opacity-30 rounded-full filter blur-3xl animate-pulse delay-500"></div>
+        <div
+          className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,_rgba(255,255,255,0.05)_1px,_transparent_1px)]"
+          style={{ backgroundSize: "40px 40px" }}
+        ></div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-8"
+        className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-8"
       >
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
@@ -27,9 +36,12 @@ const Hero = () => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
         >
           Unlock the Power of <br />
-          <span className="text-teal-400">AI in Financial Analysis</span> <br />
+          <span className="text-teal-400 drop-shadow-[0_0_10px_#14b8a6]">
+            AI in Financial Analysis
+          </span>{" "}
+          <br />
           for Smarter Decisions{" "}
-          <FaMoneyBillWave className="inline-block text-teal-400" />
+          <FaMoneyBillWave className="inline-block text-teal-400 drop-shadow-[0_0_10px_#14b8a6]" />
         </motion.h1>
 
         <motion.p
@@ -50,7 +62,7 @@ const Hero = () => {
         >
           <Link
             href="#"
-            className="w-full sm:w-auto bg-teal-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-teal-600 transition-all duration-300"
+            className="w-full sm:w-auto bg-teal-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-teal-600 transition-all duration-300 drop-shadow-[0_0_10px_#14b8a6]"
           >
             Join The Waitlist
           </Link>
@@ -110,22 +122,6 @@ const Hero = () => {
               4.7 / 5 (150+ reviews)
             </span>
           </div>
-        </motion.div>
-
-        <motion.div
-          ref={refImage}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={inViewImage ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 0.2, duration: 1 }}
-          className="mt-8 flex justify-center"
-        >
-          <Image
-            src="/img/dashboard.jpg"
-            alt="Finance Dashboard"
-            width={600}
-            height={300}
-            className="w-full max-w-md sm:max-w-lg lg:max-w-lg rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-          />
         </motion.div>
       </motion.div>
     </section>
