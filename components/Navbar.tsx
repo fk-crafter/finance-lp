@@ -18,7 +18,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 80, damping: 15 }}
-      className="w-full top-0 z-50 relative"
+      className="w-full top-0 z-50 fixed bg-gray-900"
     >
       <div className="absolute inset-0 -z-10 bg-gray-900 opacity-90">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-teal-400/10 to-indigo-500/10 blur-xl"></div>
@@ -92,8 +92,15 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden flex flex-col space-y-6 bg-gray-800 p-6 relative"
+          className="absolute top-0 left-0 w-full h-screen bg-gray-800 bg-opacity-95 flex flex-col space-y-6 p-6 z-50"
         >
+          <button
+            onClick={toggleMenu}
+            className="text-white text-3xl self-end"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
           <NavLink href="#" delay={0.1}>
             Homepage
           </NavLink>
