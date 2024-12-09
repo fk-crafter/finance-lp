@@ -18,7 +18,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 80, damping: 15 }}
-      className="w-full top-0 z-50 fixed bg-gray-900"
+      className="w-full top-0 z-50  bg-gray-900"
     >
       <div className="absolute inset-0 -z-10 bg-gray-900 opacity-90">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-teal-400/10 to-indigo-500/10 blur-xl"></div>
