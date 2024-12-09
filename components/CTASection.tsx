@@ -46,13 +46,13 @@ const CTASection = () => {
         >
           <Link
             href="#"
-            className="bg-teal-500 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 shadow-[0_0_10px_#14b8a6] hover:shadow-[0_0_20px_#14b8a6] hover:scale-105"
+            className="bg-teal-500 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 shadow-[0_0_10px_#14b8a6] hover:shadow-[0_0_20px_#14b8a6] hover:scale-105 whitespace-nowrap text-center min-w-[150px]"
           >
             Join Waitlist
           </Link>
           <Link
             href="#"
-            className="border border-white text-white px-6 py-3 rounded-md font-medium transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105"
+            className="border border-white text-white px-6 py-3 rounded-md font-medium transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105 whitespace-nowrap text-center min-w-[150px]"
           >
             Contact
           </Link>
