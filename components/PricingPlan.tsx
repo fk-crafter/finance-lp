@@ -13,11 +13,20 @@ const PricingPlans = () => {
 
   return (
     <motion.section
-      className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 lg:px-8 text-white"
+      className="relative py-16 px-4 lg:px-8 text-white overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-gray-900 via-gray-800 to-black">
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-teal-500 opacity-20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-indigo-500 opacity-20 rounded-full filter blur-3xl animate-pulse delay-500"></div>
+        <div
+          className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,_rgba(255,255,255,0.05)_1px,_transparent_1px)]"
+          style={{ backgroundSize: "40px 40px" }}
+        ></div>
+      </div>
+
       <hr className="border-t border-gray-700 my-8 -mt-12" />
       <motion.div
         className="max-w-5xl mx-auto text-center"
