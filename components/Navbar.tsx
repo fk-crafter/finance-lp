@@ -18,9 +18,14 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 80, damping: 15 }}
-      className="w-full top-0 z-50 bg-white bg-opacity-10 backdrop-blur-md shadow-lg"
+      className="w-full top-0 z-50 relative"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <div className="absolute inset-0 -z-10 bg-gray-900 opacity-90">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-teal-400/10 to-indigo-500/10 blur-xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-1/2 h-1/2 bg-teal-400 rounded-full opacity-30 blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20 relative">
         <div className="flex-shrink-0">
           <Image src="/img/logo.png" alt="Logo" width={150} height={150} />
         </div>
@@ -51,7 +56,7 @@ const Navbar = () => {
         >
           <Link
             href="#"
-            className="bg-teal-500 text-white px-5 py-2 rounded-md hover:bg-teal-600 transition-all duration-300 text-lg font-semibold"
+            className="bg-teal-500 text-white px-5 py-2 rounded-md hover:bg-teal-600 transition-all duration-300 text-lg font-semibold shadow-lg shadow-teal-500/50"
           >
             Join the waitlist
           </Link>
@@ -87,7 +92,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden flex flex-col space-y-6 bg-gray-800 p-6"
+          className="md:hidden flex flex-col space-y-6 bg-gray-800 p-6 relative"
         >
           <NavLink href="#" delay={0.1}>
             Homepage
@@ -106,7 +111,7 @@ const Navbar = () => {
           </NavLink>
           <Link
             href="#"
-            className="bg-teal-500 text-white px-5 py-2 rounded-md text-center font-semibold hover:bg-teal-600 transition-all duration-300"
+            className="bg-teal-500 text-white px-5 py-2 rounded-md text-center font-semibold hover:bg-teal-600 transition-all duration-300 shadow-lg shadow-teal-500/50"
           >
             Join the waitlist
           </Link>
