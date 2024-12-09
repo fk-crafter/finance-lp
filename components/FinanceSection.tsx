@@ -17,7 +17,7 @@ import Image from "next/image";
 const FinanceSection = () => {
   return (
     <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-12 px-4 sm:px-6 lg:px-8 text-white">
-      <hr className="border-t border-gray-700 my-8" />
+      <hr className="border-t border-gray-700 my-8 -mt-12" />
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"

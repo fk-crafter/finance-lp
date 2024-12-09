@@ -27,7 +27,7 @@ const PricingPlans = () => {
         ></div>
       </div>
 
-      <hr className="border-t border-gray-700 my-8 -mt-12" />
+      <hr className="border-t border-gray-700 my-8 -mt-16" />
       <motion.div
         className="max-w-5xl mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
