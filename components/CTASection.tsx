@@ -52,7 +52,7 @@ const CTASection = () => {
           </Link>
           <Link
             href="#"
-            className="border border-white text-white px-6 py-3 rounded-md font-medium transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105 whitespace-nowrap text-center min-w-[150px]"
+            className="w-full sm:w-auto border border-white text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
           >
             Contact
           </Link>
