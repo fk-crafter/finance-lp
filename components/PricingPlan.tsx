@@ -85,6 +85,11 @@ const PricingPlans = () => {
                 ? pricing.monthly.silver
                 : pricing.yearly.silver.price
             }
+            originalPrice={
+              billingCycle === "yearly"
+                ? pricing.yearly.silver.original
+                : undefined
+            }
             features={pricingFeatures.silver}
             trialText="14 Days Free Trial"
           />
@@ -94,6 +99,11 @@ const PricingPlans = () => {
               billingCycle === "monthly"
                 ? pricing.monthly.gold
                 : pricing.yearly.gold.price
+            }
+            originalPrice={
+              billingCycle === "yearly"
+                ? pricing.yearly.gold.original
+                : undefined
             }
             features={pricingFeatures.gold}
             popular
@@ -105,6 +115,11 @@ const PricingPlans = () => {
               billingCycle === "monthly"
                 ? pricing.monthly.premium
                 : pricing.yearly.premium.price
+            }
+            originalPrice={
+              billingCycle === "yearly"
+                ? pricing.yearly.premium.original
+                : undefined
             }
             features={pricingFeatures.premium}
             trialText="14 Days Free Trial"
@@ -118,45 +133,71 @@ const PricingPlans = () => {
 const PricingCard = ({
   title,
   price,
+  originalPrice,
   features,
   popular,
   trialText,
-}: PricingCardProps & { trialText: string }) => (
-  <div
-    className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
-      popular
-        ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10 shadow-[0_0_20px_#14b8a6]"
-        : "bg-gray-600 bg-opacity-40 shadow-[0_0_10px_#14b8a6]"
-    } mt-4 mb-4 md:mt-0 md:mb-0 pb-16 lg:pb-8`}
-    style={{ marginTop: popular ? "-20px" : "0" }}
-  >
-    {popular && (
-      <span className="absolute top-[-12px] left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-semibold py-1 px-3 rounded-full text-sm">
-        MOST POPULAR
-      </span>
-    )}
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <div className="mb-4">
-      <p className="text-4xl font-bold">{price}</p>
+}: PricingCardProps & { trialText: string; originalPrice?: string }) => {
+  const calculateDiscount = () => {
+    if (originalPrice && price) {
+      const original = parseFloat(originalPrice.replace(/\$/g, ""));
+      const current = parseFloat(price.replace(/\$/g, ""));
+      return Math.round(((original - current) / original) * 100);
+    }
+    return null;
+  };
+
+  const discountPercentage = calculateDiscount();
+
+  return (
+    <div
+      className={`relative rounded-lg p-6 shadow-md transition-all duration-300 ${
+        popular
+          ? "bg-teal-600 text-white scale-105 transform translate-y-2 z-10 shadow-[0_0_20px_#14b8a6]"
+          : "bg-gray-600 bg-opacity-40 shadow-[0_0_10px_#14b8a6]"
+      } mt-4 mb-4 md:mt-0 md:mb-0 pb-16 lg:pb-8`}
+      style={{ marginTop: popular ? "-20px" : "0" }}
+    >
+      {popular && (
+        <span className="absolute top-[-12px] left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-semibold py-1 px-3 rounded-full text-sm">
+          MOST POPULAR
+        </span>
+      )}
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <div className="mb-4">
+        {originalPrice && (
+          <>
+            <p className="text-gray-400 text-lg line-through">
+              {originalPrice}
+            </p>
+            {discountPercentage && (
+              <p className="text-teal-200 text-sm font-semibold">
+                Save {discountPercentage}%!
+              </p>
+            )}
+          </>
+        )}
+        <p className="text-4xl font-bold">{price}</p>
+      </div>
+
+      <hr className="border-t border-gray-500 my-4" />
+
+      <ul className="text-gray-300 mb-6 space-y-2">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-start gap-2">
+            <FaCheck className="text-teal-300 mt-1" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p className="text-teal-200 text-sm font-medium mb-4">{trialText}</p>
+
+      <button className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300">
+        Choose Plan
+      </button>
     </div>
-
-    <hr className="border-t border-gray-500 my-4" />
-
-    <ul className="text-gray-300 mb-6 space-y-2">
-      {features.map((feature, index) => (
-        <li key={index} className="flex items-start gap-2">
-          <FaCheck className="text-teal-500 mt-1" />
-          <span>{feature}</span>
-        </li>
-      ))}
-    </ul>
-
-    <p className="text-teal-400 text-sm font-medium mb-4">{trialText}</p>
-
-    <button className="bg-teal-100 text-gray-900 font-medium py-2 px-4 rounded-md hover:bg-teal-800 hover:text-white transition-all duration-300">
-      Choose Plan
-    </button>
-  </div>
-);
+  );
+};
 
 export default PricingPlans;
