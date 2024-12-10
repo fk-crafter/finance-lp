@@ -98,7 +98,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">
             Subscribe to our Newsletter
           </h3>
-          <p className="text-gray-400 mb-6">Get the latest updates and offers.</p>
+          <p className="text-gray-400 mb-6">
+            Get the latest updates and offers.
+          </p>
           <form className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
             <input
               type="email"
@@ -108,7 +110,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="px-6 py-2 rounded-md bg-teal-500 text-white font-medium hover:bg-teal-600 transition-all duration-300"
+              className="px-6 py-2 rounded-md bg-teal-500 text-white font-medium hover:bg-teal-600 transition-all duration-300 shadow-[0_0_10px_#14b8a6] hover:shadow-[0_0_20px_#14b8a6] hover:scale-105 whitespace-nowrap text-center"
             >
               Subscribe
             </button>
